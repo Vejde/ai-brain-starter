@@ -75,7 +75,7 @@ The core of the kit. An open-source process for capturing your authentic voice.
 | [interview-guide.md](voice-profile/interview-guide.md) | 100 questions across 9 sections. The process. |
 | [voice-profile-template.md](voice-profile/voice-profile-template.md) | Structure for your answers |
 | [ai-facilitator-prompt.md](voice-profile/ai-facilitator-prompt.md) | Turns AI into your interviewer |
-| [examples/anna-hager.md](voice-profile/examples/anna-hager.md) | What a finished profile looks like |
+
 
 ### Working Agents (`.claude/agents/`)
 
