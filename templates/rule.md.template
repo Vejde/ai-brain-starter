@@ -1,0 +1,11 @@
+# {{RULE_NAME}}
+
+## Always
+
+- {{ALWAYS_1}}
+- {{ALWAYS_2}}
+
+## Never
+
+- {{NEVER_1}}
+- {{NEVER_2}}

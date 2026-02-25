@@ -1,0 +1,16 @@
+---
+name: {{COMMAND_NAME}}
+description: {{DESCRIPTION}}
+---
+
+<!-- $ARGUMENTS contains whatever the user types after the command name -->
+
+## Steps
+
+1. {{STEP_1}}
+2. {{STEP_2}}
+3. {{STEP_3}}
+
+## Verification
+
+{{HOW_TO_VERIFY}}

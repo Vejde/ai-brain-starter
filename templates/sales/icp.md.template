@@ -1,0 +1,37 @@
+# {{COMPANY_NAME}} -- Positioning & ICP
+
+## Elevator Pitch (30 seconds)
+
+> "{{ELEVATOR_PITCH}}"
+
+## What We Are NOT
+
+- {{NOT_1}}
+- {{NOT_2}}
+
+## What We ARE
+
+- {{ARE_1}}
+- {{ARE_2}}
+
+## Ideal Customer Profile (ICP)
+
+**Perfect fit:**
+- Company size: {{COMPANY_SIZE}}
+- Industry/sector: {{INDUSTRY}}
+- Mindset: {{MINDSET}}
+- Budget range: {{BUDGET}}
+
+**Not a fit:**
+- {{NOFIT_1}}
+- {{NOFIT_2}}
+
+## How to Recognize Them
+
+### Green flags (continue)
+- {{GREEN_1}}
+- {{GREEN_2}}
+
+### Red flags (end politely)
+- {{RED_1}}
+- {{RED_2}}

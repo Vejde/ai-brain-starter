@@ -1,0 +1,25 @@
+---
+name: {{AGENT_NAME}}
+description: {{DESCRIPTION}}. Use PROACTIVELY when {{TRIGGER_CONDITION}}.
+tools: {{TOOLS}}
+model: inherit
+---
+
+## Role
+
+{{ROLE_DESCRIPTION}}
+
+## Reference Documents
+
+<!-- Agent reads these ON DEMAND, not at every invocation -->
+<!-- - `path/to/reference.md` -- description -->
+
+## Process
+
+1. {{STEP_1}}
+2. {{STEP_2}}
+3. {{STEP_3}}
+
+## Output
+
+{{OUTPUT_FORMAT}}

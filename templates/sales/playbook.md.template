@@ -1,0 +1,66 @@
+# {{COMPANY_NAME}} -- Sales Process
+
+## Step 1: First Contact
+
+**Goal:** Understand if they're a fit, book a meeting
+
+**Questions to ask:**
+- What prompted you to reach out?
+- Where are you today with {{YOUR_DOMAIN}}?
+- What would change if you could {{DESIRED_OUTCOME}}?
+- What has held you back so far?
+
+**Red flags (end politely):**
+- {{RED_FLAG_1}}
+- {{RED_FLAG_2}}
+
+**Green flags (continue):**
+- {{GREEN_FLAG_1}}
+- {{GREEN_FLAG_2}}
+
+## Step 2: Needs Analysis
+
+**Goal:** Understand their situation deeply enough to propose the right offering
+
+- What does your current process look like?
+- What have you tried before?
+- Who else is involved in this decision?
+- What does success look like for you?
+
+## Step 3: Proposal
+
+- Reference the specific problems they described
+- Match to your productized offering (see offerings.md)
+- Show clear deliverables and timeline
+- Price based on value, not hours
+
+## Step 4: Negotiation
+
+**Principles:**
+- Don't discount price, adjust scope
+- Your positioning is not negotiable
+- Better no deal than a bad deal
+- Silence is okay. Don't fill it with concessions.
+
+## Step 5: Close
+
+- Confirm scope, timeline, price in writing
+- Clear next steps with dates
+- Invoice terms upfront
+
+## Follow-up Cadence
+
+| Lead Type | First Follow-up | Second | After That |
+|-----------|----------------|--------|------------|
+| Hot | 2-3 days | 1 week | Weekly |
+| Warm | 1 week | 2 weeks | Monthly |
+| Cold | After relevant trigger | -- | -- |
+
+## Warning Signals
+
+| Signal | Response |
+|---|---|
+| "Send me a proposal" (before meeting) | "Happy to. Let's do a quick call first so I can tailor it." |
+| "Can you do it cheaper?" | "I can adjust scope. What's most important to you?" |
+| Ghosting after proposal | One follow-up. Then move on. |
+| "We need to check with..." | "Great. Can we include them in the next meeting?" |

@@ -1,0 +1,55 @@
+# {{COMPANY_NAME}} -- Productized Offerings
+
+## 1. {{OFFERING_1_NAME}} (entry-level)
+
+**What:** {{DESCRIPTION_1}}
+
+**Deliverables:**
+- {{DELIVERABLE_1A}}
+- {{DELIVERABLE_1B}}
+
+**Price:** {{PRICE_1}}
+**Timeline:** {{TIMELINE_1}}
+
+**Value for customer:** {{CUSTOMER_VALUE_1}}
+**Value for you:** {{YOUR_VALUE_1}} (e.g., pipeline building, case studies)
+
+---
+
+## 2. {{OFFERING_2_NAME}} (implementation)
+
+**What:** {{DESCRIPTION_2}}
+
+**Deliverables:**
+- {{DELIVERABLE_2A}}
+- {{DELIVERABLE_2B}}
+
+**Price:** {{PRICE_2}}
+**Timeline:** {{TIMELINE_2}}
+
+**Value for customer:** {{CUSTOMER_VALUE_2}}
+**Value for you:** {{YOUR_VALUE_2}}
+
+---
+
+## 3. {{OFFERING_3_NAME}} (ongoing)
+
+**What:** {{DESCRIPTION_3}}
+
+**Deliverables:**
+- {{DELIVERABLE_3A}}
+- {{DELIVERABLE_3B}}
+
+**Price:** {{PRICE_3}}
+**Timeline:** {{TIMELINE_3}}
+
+**Value for customer:** {{CUSTOMER_VALUE_3}}
+**Value for you:** {{YOUR_VALUE_3}}
+
+---
+
+## Pricing Principles
+
+- Price based on market value, not time spent
+- Don't discount price, adjust scope
+- Entry-level builds trust. Implementation generates revenue. Ongoing creates stability.

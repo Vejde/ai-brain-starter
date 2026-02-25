@@ -1,0 +1,39 @@
+# {{PROJECT_NAME}}
+
+{{PROJECT_DESCRIPTION}}
+
+## Tech Stack
+
+{{TECH_STACK}}
+
+## Key Directories
+
+{{KEY_DIRECTORIES}}
+
+## Verification
+
+- Test: `{{TEST_COMMAND}}`
+- Build: `{{BUILD_COMMAND}}`
+- Lint: `{{LINT_COMMAND}}`
+
+## Patterns
+
+{{PATTERNS}}
+
+## Never
+
+{{NEVER_DO}}
+
+## Agents
+
+<!-- List your agents here as you create them -->
+
+## Commands
+
+- `/start` -- session start ritual
+- `/review` -- structured review
+
+## Workflow
+
+All work follows: GATHER CONTEXT > TAKE ACTION > VERIFY > REPEAT
+See `.claude/rules/agent-loop.md`
