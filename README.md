@@ -37,7 +37,7 @@ Step 2 is the bridge. It reads your completed voice profile and extracts your de
 ### Option A: Start with your voice (recommended)
 
 ```bash
-git clone https://github.com/vejdeab/ai-brain-starter.git
+git clone https://github.com/Vejde/ai-brain-starter.git
 cd ai-brain-starter
 claude
 ```
