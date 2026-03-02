@@ -12,61 +12,68 @@ $ARGUMENTS should contain: `<project-path> [profile]`
 - `<project-path>`: absolute or relative path to the target project
 - `[profile]`: "minimal" (default), "solo", or "team"
 
-## Profiles
+## File Mapping
+
+All source paths are relative to THIS repo (ai-brain-starter).
+All destination paths are relative to the TARGET project.
 
 ### minimal (default)
-For getting started quickly:
-- CLAUDE.md (generated from interview)
-- .claude/settings.json
-- .claude/rules/agent-loop.md
-- .claude/commands/start.md
 
-### solo
-For solo consultants, freelancers, solopreneurs:
-- Everything in minimal, plus:
-- admin/VOICE-PROFILE.md (voice profile template)
-- admin/BRAND-DNA.md (brand DNA template)
-- .claude/agents/reviewer.md
-- .claude/agents/strategist.md
-- .claude/commands/review.md
-- .claude/commands/create-agent.md
-- .claude/commands/create-command.md
-- .claude/rules/writing-standards.md
+| Source | Destination | Action |
+|--------|-------------|--------|
+| templates/CLAUDE.md.template | CLAUDE.md | Generate from interview |
+| .claude/rules/agent-loop.md | .claude/rules/agent-loop.md | Copy |
+| .claude/commands/start.md | .claude/commands/start.md | Copy |
+| — | .claude/settings.json | Generate from interview |
 
-### team
-For development teams:
-- Everything in minimal, plus:
-- .claude/agents/explorer.md
-- .claude/agents/reviewer.md (code-focused)
-- .claude/commands/review.md
-- .claude/commands/create-agent.md
-- .claude/commands/create-command.md
-- .claude/rules/writing-standards.md
+### solo (includes everything in minimal, plus:)
+
+| Source | Destination | Action |
+|--------|-------------|--------|
+| voice-profile/voice-profile-template.md | admin/VOICE-PROFILE.md | Copy |
+| voice-profile/ai-facilitator-prompt.md | admin/AI-FACILITATOR-PROMPT.md | Copy |
+| docs/BRAND-DNA-TEMPLATE.md | admin/BRAND-DNA.md | Copy |
+| .claude/agents/reviewer.md | .claude/agents/reviewer.md | Copy |
+| .claude/agents/strategist.md | .claude/agents/strategist.md | Copy |
+| .claude/commands/review.md | .claude/commands/review.md | Copy |
+| .claude/commands/create-agent.md | .claude/commands/create-agent.md | Copy |
+| .claude/commands/create-command.md | .claude/commands/create-command.md | Copy |
+| .claude/rules/writing-standards.md | .claude/rules/writing-standards.md | Copy |
+
+### team (includes everything in minimal, plus:)
+
+| Source | Destination | Action |
+|--------|-------------|--------|
+| .claude/agents/explorer.md | .claude/agents/explorer.md | Copy |
+| .claude/agents/reviewer.md | .claude/agents/reviewer.md | Copy |
+| .claude/commands/review.md | .claude/commands/review.md | Copy |
+| .claude/commands/create-agent.md | .claude/commands/create-agent.md | Copy |
+| .claude/commands/create-command.md | .claude/commands/create-command.md | Copy |
+| .claude/rules/writing-standards.md | .claude/rules/writing-standards.md | Copy |
 
 ## Process
 
-### Step 1: Voice First
+### Step 1: Verify Target
+
+Check that the project path exists. Warn if not a git repo.
+Check if `.claude/` already exists. If so, ask: merge or skip existing files?
+
+### Step 2: Voice First (solo profile only)
 
 Ask: "Do you have a voice profile? A document that captures how you communicate?"
 
 **If yes:** Ask for the path. Reference it in CLAUDE.md and all agents.
 
-**If no (solo profile):** Explain the voice profile process:
+**If no:** Explain:
 "The most impactful thing you can do is build a voice profile. It takes 2-4 hours but transforms everything Claude produces for you. I'll set up the template. You can do the interview after scaffolding."
 
-Copy `voice-profile/voice-profile-template.md` to `admin/VOICE-PROFILE.md`.
-Copy `voice-profile/ai-facilitator-prompt.md` to `admin/AI-FACILITATOR-PROMPT.md`.
+Then copy voice-profile files per the file mapping above.
 
-**If no (team profile):** Skip voice profile. Teams typically define voice in style guides.
-
-### Step 2: Verify Target
-
-Check that the project path exists. Warn if not a git repo.
-Check if .claude/ already exists. If so, ask: merge or skip existing files?
+**Team profile:** Skip voice profile. Teams typically define voice in style guides.
 
 ### Step 3: Project Interview
 
-Ask these questions to generate a project-specific CLAUDE.md:
+Ask these questions to generate CLAUDE.md:
 
 1. **What is this project?** (one sentence)
 2. **What tech stack?** (languages, frameworks, key dependencies)
@@ -75,42 +82,60 @@ Ask these questions to generate a project-specific CLAUDE.md:
 5. **Any patterns Claude should follow?** (naming conventions, architecture patterns)
 6. **What should Claude NEVER do?** (destructive operations, specific files to avoid)
 
-### Step 4: Generate Structure
+### Step 4: Preview Before Writing
 
-Based on profile and interview answers:
+Show the full list of files that will be created, grouped by action:
 
-1. Create directories: `.claude/agents/`, `.claude/commands/`, `.claude/rules/`
-2. If voice profile exists, add to CLAUDE.md:
+```
+Files to COPY (unchanged from starter kit):
+  .claude/rules/agent-loop.md
+  .claude/commands/start.md
+  ...
+
+Files to GENERATE (from interview answers):
+  CLAUDE.md
+  .claude/settings.json
+```
+
+Ask for confirmation before writing any files.
+
+### Step 5: Generate Files
+
+1. Create directories: `admin/`, `.claude/agents/`, `.claude/commands/`, `.claude/rules/`
+2. **Copy** all files marked "Copy" in the file mapping. Read each source file, then write to destination.
+3. **Generate** CLAUDE.md from `templates/CLAUDE.md.template` using interview answers:
+   - Replace `{{PROJECT_NAME}}` with project name
+   - Replace `{{PROJECT_DESCRIPTION}}` with description
+   - Replace `{{TECH_STACK}}` with tech stack
+   - Replace `{{KEY_DIRECTORIES}}` with directory list
+   - Replace `{{TEST_COMMAND}}`, `{{BUILD_COMMAND}}`, `{{LINT_COMMAND}}` with commands
+   - Replace `{{PATTERNS}}` with patterns to follow
+   - Replace `{{NEVER_DO}}` with things Claude should never do
+   - If voice profile exists, add a Voice section referencing `admin/VOICE-PROFILE.md`
+4. **Generate** `.claude/settings.json`:
+   ```json
+   {
+     "permissions": {
+       "allow": [
+         "Bash(ls:*)",
+         "Bash(git:*)",
+         "Bash({{TEST_COMMAND}})",
+         "Bash({{BUILD_COMMAND}})",
+         "Bash({{LINT_COMMAND}})"
+       ]
+     }
+   }
    ```
-   ## Voice
-   Read `admin/VOICE-PROFILE.md` before writing any content.
-   Match the voice, don't caricature it.
-   ```
-3. Generate CLAUDE.md using the WHAT/WHY/HOW framework:
-   - **WHAT**: Project description, tech stack, key directories
-   - **WHY**: Architecture decisions, patterns to follow, voice reference
-   - **HOW**: Verification commands (test, build, lint)
-4. Copy appropriate files from this starter kit's templates/ directory
-5. Generate .claude/settings.json with permission pre-approvals for test/build/lint commands
-6. Ensure all agents that write content include: "Read admin/VOICE-PROFILE.md before writing."
-
-### Step 5: Replace Placeholders
-
-In each generated file, replace:
-- `{{PROJECT_NAME}}` with project name
-- `{{PROJECT_DESCRIPTION}}` with description from interview
-- `{{TEST_COMMAND}}` with test command
-- `{{BUILD_COMMAND}}` with build command
-- `{{LINT_COMMAND}}` with lint command
+   Omit test/build/lint entries if the user didn't provide them.
 
 ### Step 6: Report
 
-List all generated files.
-Show the generated CLAUDE.md for approval.
-Print next steps:
+List all created files. Then print:
 
 ```
-Setup complete. Next steps:
+Setup complete. Created [N] files.
+
+Next steps:
 
 1. BUILD YOUR VOICE PROFILE (most impactful step)
    Copy admin/AI-FACILITATOR-PROMPT.md into a Claude conversation.
@@ -119,12 +144,12 @@ Setup complete. Next steps:
 2. Review and customize CLAUDE.md
 3. Run `claude` in your project directory
 4. Type /start to test the session ritual
-5. Use /create-agent to add custom agents
+5. Run /activate-voice after completing your voice profile
 ```
 
 ## Important
 
 - NEVER overwrite existing files without asking
-- Always show what will be created before creating it
+- Always preview before writing (Step 4)
 - Generated CLAUDE.md should be under 100 lines
 - Voice profile is always the first recommendation, never an afterthought
