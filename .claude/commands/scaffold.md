@@ -55,8 +55,15 @@ All destination paths are relative to the TARGET project.
 
 ### Step 1: Verify Target
 
-Check that the project path exists. Warn if not a git repo.
-Check if `.claude/` already exists. If so, ask: merge or skip existing files?
+Resolve the project path to an absolute path. If relative, resolve from the USER'S working directory (not this repo's root).
+
+Example: if the user runs `/scaffold ~/my-project solo`, the target is `/Users/[username]/my-project`.
+Example: if the user runs `/scaffold my-project solo`, the target is `[cwd]/my-project`.
+
+If the path doesn't exist, ask: "Directory doesn't exist. Create it?"
+
+Check if `.claude/` already exists in the target. If so, ask: merge or skip existing files?
+Warn if the target is not a git repo.
 
 ### Step 2: Voice First (solo profile only)
 

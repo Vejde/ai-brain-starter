@@ -18,13 +18,17 @@ cd ai-brain-starter
 claude
 ```
 
-Inside Claude Code:
+Inside Claude Code, scaffold into your project:
 
 ```
-> /scaffold /path/to/your/project solo
+> /scaffold ~/my-project solo
 ```
+
+The path is where YOUR project lives (not this repo). Use an absolute path like `~/my-project` or `/Users/you/work/client-x`. The scaffold copies files from this starter kit into that directory.
 
 Interactive interview generates your CLAUDE.md, agents, rules, and a voice profile template. Takes 5 minutes.
+
+**Fork or clone?** Clone is fine for getting started. If you want to track updates or contribute back, fork first, then clone your fork. Your actual projects live in separate directories — this repo is just the scaffolding tool.
 
 After scaffolding, build your voice profile (the part that actually matters):
 
