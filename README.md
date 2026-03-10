@@ -158,6 +158,13 @@ The problem was never the AI. The problem is that we never articulated what make
 
 This starter kit fixes that. You begin with yourself, not with scaffolding.
 
+## Talk to Claude
+
+Voice input changes everything. Instead of typing prompts, talk. Especially for voice profiles and brainstorming.
+
+- **[jarrodwatts/claude-stt](https://github.com/jarrodwatts/claude-stt)** -- Speech-to-text plugin for Claude Code. Live streaming dictation. Install with `claude install-plugin jarrodwatts/claude-stt`
+- **[fltman/whisper.cpp](https://github.com/ggerganov/whisper.cpp)** -- Local Whisper for offline transcription (C/C++ port, no cloud dependency)
+
 ## Credits
 
 - **[shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice)** -- Command > Agent > Skills architecture
